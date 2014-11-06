@@ -1,0 +1,25 @@
+{
+  "name": "uxrocket.clear",
+  "version": "0.6.0",
+  "description": "jQuery based clear input/textarea action handler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxrocket/uxrocket.clear.git"
+  },
+  "dependencies": {
+	"jquery": "latest"
+  },
+  "keywords": [
+    "jQuery",
+    "javascript",
+    "input",
+    "textarea",
+	"uxrocket"
+  ],
+  "author": "Bilal Cinarli <bcinarli@gmail.com> (http://bcinarli.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uxrocket/uxrocket.clear/issues"
+  },
+  "homepage": "https://github.com/uxrocket/uxrocket.clear"
+}

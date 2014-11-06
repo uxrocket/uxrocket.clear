@@ -1,0 +1,51 @@
+/* @author Bilal Cinarli */
+$clear-version: 0.4.1;
+
+/** -------------------------------------------
+ 	Clear Styles
+    ------------------------------------------- **/
+.uxitd-clear-wrap {
+	position: relative;
+    display: inline-block;
+
+    &[class*="-columns"] {
+        .uxitd-clear-ready {
+            width: 100%;
+        }
+    }
+}
+
+    input.uxitd-clear-ready {
+        padding-right: 25px;
+
+        // both clear and another plugin applied to a fields
+        &.uxitd-calendar-ready,
+        &.uxitd-autocomplete-ready {
+            padding-right: 42px;
+
+            + .uxitd-clear-icon {
+                right: 25px;
+            }
+        }
+    }
+
+    .uxitd-clear-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        font-size: 1.2em;
+        color: #000 !important;
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            margin-top: -9px;
+        }
+    }
+
+.placeholder-text + .uxitd-clear-icon {
+  right: 35px;
+}
