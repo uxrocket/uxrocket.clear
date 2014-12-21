@@ -1,3 +1,6 @@
+## Version 0.7.1
+- FIX: opts values now passing through the data('uxSelect').
+
 ## Version 0.7.0
 - NEW: The selector class and ready class started to removed from wrapper classes.
 - CHANGE: When more than one UX Rocket plugin applied, the "opts" data mixed with other plugins and become useless. The opts-data name changed to uxSelect. 
