@@ -1,3 +1,6 @@
+## Version 0.7.2
+- FIX: missing selector added
+
 ## Version 0.7.1
 - FIX: opts values now passing through the data('uxSelect').
 
