@@ -1,3 +1,6 @@
+## Versiyon 0.7.2a (non-release)
+- YENİ: Yeni tanımlanmaya başlayan, elemana bağlanmış uxRocket plugin listesi kontrolleri eklendi.
+
 ## Version 0.7.2
 - FIX: missing selector added
 
