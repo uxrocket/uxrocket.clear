@@ -1,3 +1,6 @@
+## Versiyon 0.8.0
+- YENİ: Input ve silme işlemleri için kontrol edilen "event" uxClear namespacei içine eklendi.
+
 ## Versiyon 0.7.2a (non-release)
 - YENİ: Yeni tanımlanmaya başlayan, elemana bağlanmış uxRocket plugin listesi kontrolleri eklendi.
 
