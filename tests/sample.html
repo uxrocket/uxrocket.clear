@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<title>UX Rocket Clear Sample</title>
+		<meta charset="utf-8" />
+		
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="../lib/uxrocket.clear.js"></script>
+		<script>
+			$(function(){
+				$(".clear").clear();
+			});
+		</script>
+				
+		<style>
+			*, *:before, *:after { box-sizing: border-box }
+			body { margin: 0; padding: 0; font: 16px/1.4 "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+			.content { padding: 5em; }
+
+			.uxitd-plugin-wrap {
+				width: 250px;
+			}
+
+			.clear {
+				font-size: 1rem;
+				padding: 5px;
+			}
+			
+			/** Clear styles **/
+			.uxitd-clear-wrap {
+				position: relative;
+				display: inline-block;
+			}
+
+			.uxitd-clear-ready {
+				width: 100%;
+				padding-right: 25px;
+			}
+
+			.uxitd-clear-icon {
+				position: absolute;
+				top: 0;
+				right: 5px;
+				width: 20px;
+				height: 100%;
+				font-size: 1rem;
+				color: #000;
+			}
+
+			.uxitd-clear-icon:before {
+				position: absolute;
+				top: 50%;
+				right: 2px;
+				margin-top: -9px;
+				content: "X";
+			}
+
+		</style>
+	</head>
+	
+	<body>
+		<div class="content">
+			<div class="example">
+				<p class="wrap">
+					<input type="text" class="clear" value="This text will clear" data-on-ready="console.log('plugin is ready')" data-on-update="console.log('updated')" />
+				</p>
+
+				<p class="wrap">
+					<input type="text" class="clear" placeholder="Type something..." data-on-clear="console.log('content is cleared')" />
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
