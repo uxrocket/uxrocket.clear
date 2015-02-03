@@ -27,11 +27,13 @@ Callback			 | &nbsp;
 -------------------- | -----
 onReady              | Clear, form elemanına bağlandığında çalışacak fonksiyonu çağırır.
 onClear              | Alan silindiğinde çalışacak fonksiyonu çağırır
+onUpdate             | Clear pluginine ait instance güncellendikten sonra çalışacak fonksiyonu çağırır.
 
 
 ### Public Metodlar
-Method						         | Açıklama
------------------------------------- | -------------------------------------------------------
-$(selector).clear(options) {.method} | Bu method plugini manuel olarak bir elemana bağlamanızı sağlar.
-$.uxclear                  {.method} | Bu method pluginin detayını görmenizi sağlar
-$.uxclear.version          {.method} | Sayfaya eklenmiş pluginin versiyon numarasını gösterir.
+Method					   | Açıklama
+-------------------------- | -------------------------------------------------------
+$(selector).clear(options) | Bu method plugini manuel olarak bir elemana bağlamanızı sağlar.
+$.uxclear                  | Bu method pluginin detayını görmenizi sağlar.
+$.uxclear.update(el)       | Sayfa işlemleri sırasında tanımları değiştirilen elemanlarda pluginin özelliklerinin güncellenmesini sağlar. 
+$.uxclear.version          | Sayfaya eklenmiş pluginin versiyon numarasını gösterir.
