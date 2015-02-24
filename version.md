@@ -1,3 +1,10 @@
+## Versiyon 0.9.0
+- YENİ: `$.uxclear.update(el)` metodu eklendi. Dom değişikliği sonrasında plugin bağlantılarını güncellemek için kullanılabilir.
+- YENİ: `$.uxclear.remove(el)` metodu eklendi. Değişiklik ya da iptal için plugin bağlantılarını kaldırıp, elemanı orjinal durumuna döndürmek için kullanılabilir.
+- YENİ: `onUpdate` callbacki eklendi.
+- YENİ: `onRemove` callbacki eklendi.
+- DEĞİŞİKLİK: Statik olarak tanımlanmış değişken ve class isimleri parametrik hale getirildi.
+
 ## Versiyon 0.8.0
 - YENİ: Input ve silme işlemleri için kontrol edilen "event" uxClear namespacei içine eklendi.
 
