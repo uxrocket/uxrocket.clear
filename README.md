@@ -11,6 +11,22 @@ Metin alanına yapılan girişleri tek seferde silmek için kullanılmaktadır. 
 ### Notlar
 Clear plugini uygulanmış bütün elemanlar, `uxitd-clear-wrap` classına sahip bir `span` ya da `label`  içerisine konulmaktadır. Çıkacak çarpı işaretinin pozisyonu da bu wrapper elemanına göre tanımlanmaktadır.
 
+### Önemli (textlimit tanımlarını güncelleme işlemleri)
+Clear plugininin çalışma şeklinin tanımları `data` attributeleri ile yapıldığı durumlarda, güncelleme sırasında `$(".clear").attr('data-clear-also', '#hidden-id')` şeklinde yapılacak tanımlama işlemleri clear tanımını güncellemeyecektir. `data` attribute güncellemelerinin `data()` fonksiyonu ile yapılması gerekmektedir.
+
+```JAVASCRIPT
+var $clear = $(".clear");
+// Yanlış güncelleme 
+$clear.attr('data-clear-also', '#hidden-id');
+$.uxclear.update($clear); // #hidden-id isimli elemanın değeri silinmeyecektir.
+
+// Doğru güncelleme
+$clear.data('clear-also', '#hidden-id');
+$.uxclear.update($clear); // #hidden-id isimli elemanın değeri silinmeye başlayacaktır
+```
+Yukarıda belirtilen örnek ve güncelleme kullanımları data attribute ile belirlenen bütün clear özellikleri için geçerlidir.
+
+
 
 ### Tanımlar
 Property 			 | Default			| Açıklama
