@@ -2,26 +2,26 @@
  * @author Bilal Cinarli
  */
 
-"use strict";
+'use strict';
 
-var gulp = require("gulp"),
+var gulp = require('gulp'),
     pkg = require('./package.json'),
     isTravis = process.env.TRAVIS || false,
 
 // utils
-    header = require("gulp-header"),
-    rename = require("gulp-rename"),
-    sourcemaps = require("gulp-sourcemaps"),
-    uglify = require("gulp-uglify"),
-    notify = gulp("gulp-notify"),
+    header = require('gulp-header'),
+    rename = require('gulp-rename'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    notify = gulp('gulp-notify'),
 
 // sass
-    sass = require("gulp-sass"),
-    autoprefixer = require("gulp-autoprefixer"),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
 
 // lint
-    jshint = require("gulp-jshint"),
-    csslint = require("gulp-csslint"),
+    jshint = require('gulp-jshint'),
+    csslint = require('gulp-csslint'),
 
 // testing
     mochaPhantomJs = require('gulp-mocha-phantomjs');
@@ -34,15 +34,15 @@ var paths = {
 };
 
 var banner = [
-    "/*! UX Rocket Clear \n" +
-    " *  <%= pkg.description %> \n" +
-    " *  @author <%= pkg.author %> \n" +
-    "<% pkg.contributors.forEach(function(contributor) { %>" +
-    " *          <%= contributor.name %> <<%=contributor.email %>> (<%=contributor.url %>)\n" +
-    "<% }) %>" +
-    " *  @version <%= pkg.version %> \n" +
-    " *  @build <%= date %> \n" +
-    " */\n"
+    '/*! UX Rocket Clear \n' +
+    ' *  <%= pkg.description %> \n' +
+    ' *  @author <%= pkg.author %> \n' +
+    '<% pkg.contributors.forEach(function(contributor) { %>' +
+    ' *          <%= contributor.name %> <<%=contributor.email %>> (<%=contributor.url %>)\n' +
+    '<% }) %>' +
+    ' *  @version <%= pkg.version %> \n' +
+    ' *  @build <%= date %> \n' +
+    ' */\n'
 ].join('');
 
 var tasks = {
@@ -52,10 +52,10 @@ var tasks = {
     },
 
     sass: function() {
-        return gulp.src(paths.lib + "**/*.scss")
+        return gulp.src(paths.lib + '**/*.scss')
             .pipe(sourcemaps.init())
             .pipe(sass({
-                outputStyle: "expanded"
+                outputStyle: 'expanded'
             }))
             .pipe(autoprefixer({
                 browsers: ['last 3 versions']
@@ -63,8 +63,8 @@ var tasks = {
             .pipe(rename('uxrocket.clear.css'))
             .pipe(gulp.dest(paths.dist))
             .pipe(sass({
-                outputStyle: "compressed"
-            })).on("error", notify.onError("Error: <%= error.message %>"))
+                outputStyle: 'compressed'
+            })).on('error', notify.onError('Error: <%= error.message %>'))
             .pipe(autoprefixer({
                 browsers: ['last 3 versions']
             }))
@@ -76,24 +76,24 @@ var tasks = {
     },
 
     csslint: function() {
-        return gulp.src(paths.dist + "uxrocket.clear.css")
+        return gulp.src(paths.dist + 'uxrocket.clear.css')
             .pipe(csslint())
             .pipe(csslint.reporter());
     },
 
     lint: function() {
-        return gulp.src(paths.lib + "**/*.js")
-            .pipe(jshint()).on("error", notify.onError("Error: <%= error.message %>"))
-            .pipe(jshint.reporter("default"))
+        return gulp.src(paths.lib + '**/*.js')
+            .pipe(jshint()).on('error', notify.onError('Error: <%= error.message %>'))
+            .pipe(jshint.reporter('default'))
             .pipe(notify('JSHint completed'));
     },
 
     scripts: function() {
-        return gulp.src(paths.lib + "**/*.js")
+        return gulp.src(paths.lib + '**/*.js')
             .pipe(sourcemaps.init())
             .pipe(rename('uxrocket.clear.js'))
             .pipe(gulp.dest(paths.dist))
-            .pipe(uglify()).on("error", notify.onError("Error: <%= error.message %>"))
+            .pipe(uglify()).on('error', notify.onError('Error: <%= error.message %>'))
             .pipe(header(banner, {pkg: pkg, date: now()}))
             .pipe(rename('uxrocket.clear.min.js'))
             .pipe(sourcemaps.write('./'))
