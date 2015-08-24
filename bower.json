@@ -8,7 +8,7 @@
   "description": "jQuery based clear input/textarea action handler",
   "main": "lib/uxrocket.clear.js",
   "dependencies": {
-    "jquery": ">=1.11.1"
+    "jquery": "latest"
   },
   "keywords": [
     "jQuery",

@@ -7,19 +7,34 @@
     "url": "https://github.com/uxrocket/uxrocket.clear.git"
   },
   "dependencies": {
-	"jquery": "latest"
+    "jquery": "latest"
   },
   "keywords": [
     "jQuery",
     "javascript",
     "input",
     "textarea",
-	"uxrocket"
+    "uxrocket"
   ],
   "author": "Bilal Cinarli <bcinarli@gmail.com> (http://bcinarli.com/)",
+  "contributors": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uxrocket/uxrocket.clear/issues"
   },
-  "homepage": "https://github.com/uxrocket/uxrocket.clear"
+  "homepage": "https://github.com/uxrocket/uxrocket.clear",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-csslint": "^0.2.0",
+    "gulp-header": "^1.7.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-mocha-phantomjs": "^0.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.3.0",
+    "mocha": "^2.2.5"
+  }
 }
