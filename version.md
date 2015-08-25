@@ -1,3 +1,7 @@
+## Versiyon 1.0.0
+- YENİ: Namespaceler `$.uxrclear` olarak değiştirildi
+- YENİ: Fonksiyonlar prototype üzerinden çağrılacak şekilde değiştirildi.
+
 ## Versiyon 0.9.0
 - YENİ: `$.uxclear.update(el)` metodu eklendi. Dom değişikliği sonrasında plugin bağlantılarını güncellemek için kullanılabilir.
 - YENİ: `$.uxclear.remove(el)` metodu eklendi. Değişiklik ya da iptal için plugin bağlantılarını kaldırıp, elemanı orjinal durumuna döndürmek için kullanılabilir.
