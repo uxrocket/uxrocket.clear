@@ -1,47 +1,50 @@
 /* @author Bilal Cinarli */
-$clear-version: "0.8.0";
+$clear-version: "1.0.0";
+
+$icon-width: 25px;
 
 /** -------------------------------------------
  	Clear Styles
     ------------------------------------------- **/
-.uxitd-clear-wrap {
-	position: relative;
-    display: inline-block;
+.uxr-clear {
+    &-wrap {
+        position: relative;
+        display: inline-block;
 
-    .uxitd-clear-ready {
-        width: 100%;
-        padding-right: 25px;
-    }
-
-    &.uxitd-autocomplete-wrap,
-    &.uxitd-calendar-wrap {
-        .uxitd-clear-ready {
-            padding-right: 42px;
+        &,
+        * {
+            box-sizing: border-box;
         }
 
-        .uxitd-clear-icon {
-            right: 25px;
+        input.uxr-clear-ready {
+            padding-right: $icon-width;
         }
     }
-}
 
-    .uxitd-clear-icon {
+    &-icon {
         position: absolute;
         top: 0;
-        right: 5px;
-        width: 20px;
+        right: 0;
+        display: none;
+        width: $icon-width;
         height: 100%;
-        font-size: 1.2em;
-        color: #000 !important;
+        font: {
+            size: 1em;
+            style: normal;
+        }
+        cursor: pointer;
+        text-align: center;
+
+        .uxr-clear-icon-visible & {
+            display: block;
+        }
 
         &:before {
+            content: "X";
             position: absolute;
             top: 50%;
-            right: 2px;
-            margin-top: -9px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
         }
     }
-
-.placeholder-text + .uxitd-clear-icon {
-  right: 35px;
 }
