@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    notify = gulp('gulp-notify'),
+    notify = require('gulp-notify'),
 
 // sass
     sass = require('gulp-sass'),

@@ -25,7 +25,7 @@ describe('Testing UX Rocket Clear', function() {
         $inputs._02.wrap('<label class="uxr-plugin-wrap previously-wrapped"></label>');
 
         $.each($inputs, function(item) {
-            $inputs[item].uxrclear();
+            $inputs[item].clear();
 
             clear[item] = $inputs[item].data(data);
         });

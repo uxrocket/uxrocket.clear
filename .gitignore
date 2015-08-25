@@ -31,7 +31,6 @@ bower_components/
 *.log
 
 build/
-dist/
 
 ### Sass template
 .sass-cache/
