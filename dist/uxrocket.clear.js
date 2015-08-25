@@ -86,7 +86,7 @@
             // set plugin layout
             this.setLayout();
 
-            if(this.$el.val().length > 0){
+            if(this.$el.val().length > 0) {
                 this.$el.parent().addClass(utils.getClassname('visible'));
             }
 
@@ -140,15 +140,19 @@
                 _this.$el.parent().removeClass(ns.wrap);
             }
 
-            _this.$el.next('.' + utils.getClassname('magnify')).remove();
+            _this.$el.next('.' + utils.getClassname('icon')).remove();
         },
 
 
         bindUIActions: function() {
             var _this = this;
 
-            _this.$el.on(events.keyup, function() {
+            _this.$el.on(events.keyup + ' ' + events.focus + ' ' + events.input, function() {
                 _this.onKeyup();
+            });
+
+            _this.$el.siblings('.' + utils.getClassname('icon')).on(events.click, function(e) {
+                _this.onClick(e);
             });
         },
 
@@ -165,6 +169,13 @@
             else {
                 _this.$el.parent().removeClass(utils.getClassname('visible'));
             }
+        },
+
+        onClick: function(e){
+            e.preventDefault();
+            this.$el.val('').parent().removeClass(utils.getClassname('visible'));
+
+            utils.callback(this.options.onClear);
         },
 
         update: function() {
@@ -186,10 +197,17 @@
             // if callback defined via data-attribute, call it via new Function
             else {
                 if(fn !== false) {
-                    var func = function() {
-                        return fn;
-                    };
-                    func();
+                    var _fn = /([a-zA-Z._$0-9]+)(\(?(.*)?\))?/.exec(fn),
+                        _fn_ns = _fn[1].split('.'),
+                        _args = _fn[3] ? _fn[3] : '',
+                        func = _fn_ns.pop(),
+                        context = _fn_ns[0] ? window[_fn_ns[0]] : window;
+
+                    for(var i = 1; i < _fn_ns.length; i++){
+                        context = context[_fn_ns[i]];
+                    }
+
+                    return context[func](_args);
                 }
             }
         },
