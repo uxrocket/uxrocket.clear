@@ -34,10 +34,10 @@
             onRemove: false
         },
         events = {
-            click: 'click.' + rocketName,
-            focus: 'focus.' + rocketName,
-            input: 'input.' + rocketName,
-            keyup: 'keyup.' + rocketName
+            click : 'click.' + rocketName,
+            focus : 'focus.' + rocketName,
+            input : 'input.' + rocketName,
+            keyup : 'keyup.' + rocketName
         },
         ns = {
             prefix : 'uxr-',
@@ -101,7 +101,7 @@
                 this.classList = this.classList.replace(this.selector.substr(1), '');
             }
 
-            this.classList += ns.wrap + ' ' + utils.getClassname('wrap');
+            this.classList += ns.wrap + ' ' + utils.getClassname('wrap') + ' ' + utils.getClassname('wrap') + '-' + this._instance;
             this.classList = $.trim(this.classList);
         },
 
@@ -154,6 +154,12 @@
             _this.$el.siblings('.' + utils.getClassname('icon')).on(events.click, function(e) {
                 _this.onClick(e);
             });
+
+            $('body').on('DOMNodeRemoved', function(e){
+                if(e.target === _this.el){
+                    _this.cleanUp();
+                }
+            });
         },
 
         unbindUIActions: function() {
@@ -171,7 +177,7 @@
             }
         },
 
-        onClick: function(e){
+        onClick: function(e) {
             e.preventDefault();
             this.$el.val('').parent().removeClass(utils.getClassname('visible'));
 
@@ -184,6 +190,11 @@
 
         destroy: function() {
             return ux.destroy(this.el);
+        },
+
+        // cleans wrapper, icons etc when element removed before plugin destroyed
+        cleanUp: function(){
+            $('.' + utils.getClassname('wrap') + '-' + this._instance).remove();
         }
     });
 
@@ -203,7 +214,7 @@
                         func = _fn_ns.pop(),
                         context = _fn_ns[0] ? window[_fn_ns[0]] : window;
 
-                    for(var i = 1; i < _fn_ns.length; i++){
+                    for(var i = 1; i < _fn_ns.length; i++) {
                         context = context[_fn_ns[i]];
                     }
 
