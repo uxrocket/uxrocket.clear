@@ -2,7 +2,7 @@
  *  jQuery based clear input/textarea action handler 
  *  @author Bilal Cinarli <bcinarli@gmail.com> (http://bcinarli.com/) 
  *  @version 1.0.0 
- *  @build 2015-07-04 
+ *  @build 2015-07-00 
  */
 .uxr-clear-wrap{position:relative;display:inline-block}.uxr-clear-wrap,.uxr-clear-wrap *{box-sizing:border-box}.uxr-clear-wrap input.uxr-clear-ready{padding-right:25px}.uxr-clear-icon{position:absolute;top:0;right:0;display:none;width:25px;height:100%;font-size:1em;font-style:normal;cursor:pointer;text-align:center}.uxr-clear-icon-visible .uxr-clear-icon{display:block}.uxr-clear-icon:before{content:"X";position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}
 

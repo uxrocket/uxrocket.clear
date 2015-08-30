@@ -74,23 +74,25 @@ describe('Testing UX Rocket Clear', function() {
         });
     });
 
-    describe('Internal Method', function(){
-       describe('Clean Up', function(){
-         it('Should remove the plugin wrapper and icon when element is removed', function(){
-             var instance = clear["_01"]._instance,
-                 el = document.getElementById('cl01');
+    describe('Internal Method', function() {
+        describe('Clean Up', function() {
+            it('Should remove the plugin wrapper and icon when element is removed', function() {
+                var instance = clear["_01"]._instance,
+                    el = document.getElementById('cl01');
 
-             el.parentNode.removeChild(el);
+                el.parentNode.removeChild(el);
 
-             expect($('uxr-clear-wrap-' + instance).length).to.be.equal(0);
-         });
-       });
+                expect($('uxr-clear-wrap-' + instance).length).to.be.equal(0);
+            });
+        });
     });
 
     describe('Public Methods', function() {
         describe('Update', function() {
             it('Will update plugin settings', function() {
+                clear._02.update({clearAlso: '#id'});
 
+                expect(clear._02.options.clearAlso).to.be.equal('#id');
             });
         });
 
