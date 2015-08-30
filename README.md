@@ -1,4 +1,4 @@
-UX Rocket Clear
+UX Rocket Clear [![Build Status](https://travis-ci.org/uxrocket/uxrocket.clear.svg)](https://travis-ci.org/uxrocket/uxrocket.clear)
 ==============
 Metin alanına yapılan girişleri tek seferde silmek için kullanılmaktadır. Metin kutusuna yazmaya başlandığında kutunun sağ tarafında bir çarpı (x) işareti belirir. Çarpıya basıldığında metin kutusunun içeriği silinir.
 
